@@ -17,7 +17,7 @@ twitter_creator: "@kkaxh1"
 ---
 -->
 
-# VulnScribe — Offline AI-Powered VAPT Reporting Engine
+# VulnScribe - Offline AI-Powered VAPT Reporting Engine
 
 **VulnScribe** is an enterprise-grade, secure, and 100% offline security assessment report generation platform. It empowers cybersecurity firms and internal audit teams to rapidly compile professional VAPT reports using context-aware local AI, trained on their historical assessment data. By automating the repetitive draft-writing process, VulnScribe drastically reduces manual reporting overhead, enabling security analysts and testers to dedicate their focus to active vulnerability discovery and security testing.
 
