@@ -1,3 +1,4 @@
+<!--
 ---
 title: "VulnScribe | Offline AI-Powered VAPT Reporting Engine"
 meta_title: "VulnScribe | Offline VAPT Reporting Engine by Bhavy Morvadiya"
@@ -14,6 +15,7 @@ twitter_card: "summary_large_image"
 twitter_site: "@kkaxh1"
 twitter_creator: "@kkaxh1"
 ---
+-->
 
 # VulnScribe — Offline AI-Powered VAPT Reporting Engine
 
