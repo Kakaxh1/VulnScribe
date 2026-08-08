@@ -25,7 +25,7 @@ twitter_creator: "@kkaxh1"
 [![VAPT Reporting](https://img.shields.io/badge/VAPT-Automated--Reporting-blue?style=flat-square)](#)
 [![Privacy-Focused](https://img.shields.io/badge/Privacy-100%25--Local-success?style=flat-square)](#)
 
-![VulnScribe Web UI Dashboard](/home/mint/.gemini/antigravity-ide/brain/ac68cfc1-4112-45de-b37c-639732576206/media__1786224229438.png)
+![VulnScribe Web UI Dashboard]()
 
 ---
 
@@ -116,7 +116,7 @@ Professional Report
 ## 5. Screenshots
 
 ### Web UI Dashboard
-![Web UI Dashboard](file:///home/mint/.gemini/antigravity-ide/brain/ac68cfc1-4112-45de-b37c-639732576206/media__1786224229438.png)
+![Web UI Dashboard]()
 *Capturing raw finding names, observations, and severity selections in a responsive interface.*
 
 ### Ingested Database Viewer
