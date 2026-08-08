@@ -17,80 +17,243 @@ twitter_creator: "@kkaxh1"
 ---
 -->
 
-# VulnScribe - Offline AI-Powered VAPT Reporting Engine
+# VulnScribe
 
-**VulnScribe** is an enterprise-grade, secure, and 100% offline security assessment report generation platform. It empowers cybersecurity firms and internal audit teams to rapidly compile professional VAPT reports using context-aware local AI, trained on their historical assessment data. By automating the repetitive draft-writing process, VulnScribe drastically reduces manual reporting overhead, enabling security analysts and testers to dedicate their focus to active vulnerability discovery and security testing.
+**Offline AI-assisted VAPT report generation**
 
----
+[![Offline AI](https://img.shields.io/badge/AI-Offline--Inference-teal?style=flat-square)](#)
+[![VAPT Reporting](https://img.shields.io/badge/VAPT-Automated--Reporting-blue?style=flat-square)](#)
+[![Privacy-Focused](https://img.shields.io/badge/Privacy-100%25--Local-success?style=flat-square)](#)
 
-## Key Value Propositions
-
-### 100% Offline & Private
-* **Zero Data Leakage**: All data training, vector indexing, retrieval-augmented generation (RAG), and document rendering occur locally on the auditor's workstation or on-premise infrastructure.
-* **No Cloud Dependecies**: Does not communicate with any external APIs or cloud services. Fully compliant with strict client NDAs and air-gapped environment requirements.
-
-### Learning from Firm History
-* **Tailored Outputs**: Securely ingests and trains on your firm's previous reports, mimicking your specific terminology, finding formatting, and technical depth.
-* **Contextual Auto-Completion**: Instantly suggest high-quality impacts, remediation guides, and references based on minimal finding indicators.
-
-### 10+ Standard Assessment Types
-Out-of-the-box support for the industry's most common reporting templates, with the capability to customize and append new formats seamlessly:
-1. **Web Application VAPT**
-2. **API Security Assessment**
-3. **Android VAPT**
-4. **iOS VAPT**
-5. **External Network VAPT**
-6. **Internal Network VAPT**
-7. **Active Directory Assessment**
-8. **Cloud Security Assessment**
-9. **Firewall Configuration Review**
-10. **Red Team Tactical Assessment**
-
-### Fully Modifiable Formats
-* **Lossless Editing**: Generates reports in fully editable Microsoft Word (`.docx`) format, styled exactly to enterprise brand guidelines.
-* **Strict Layout Integrity**: Ensures no broken tables, consistent typography (Arial base), vertically centered cells, and colorful native OOXML charts with zero-value suppression.
+![VulnScribe Web UI Dashboard](/home/mint/.gemini/antigravity-ide/brain/ac68cfc1-4112-45de-b37c-639732576206/media__1786224229438.png)
 
 ---
 
-## Architecture & Technology Stack
+## 1. The Problem
 
-VulnScribe combines modern frontend technologies with a fast, lightweight local AI backend:
+Manual VAPT reporting is tedious, repetitive, and time-consuming. It typically requires security engineers to:
+* Constantly rewrite standard finding details (descriptions, CWE mappings, reference sheets).
+* Spend hours formatting evidence paragraphs and screenshots.
+* Manually research and draft impact statements and remediation steps.
+* Manage raw PoC files and structure them cleanly into tables.
+* Keep document layouts, headers, and color-coded severities consistent.
 
-```mermaid
-graph TD
-    UI[TypeScript / Tailwind CSS Web Interface] <--> Backend[Python Backend Core]
-    Backend <--> VectorStore[Local Vector Store / JSON KB]
-    Backend <--> LocalLLM[Offline LLM Core via Ollama]
-    Backend --> DocGenerator[Word Document Renderer]
-    DocGenerator --> FinalReport[Modifiable DOCX Report]
-```
-
-### Technical Stack Components
-* **User Interface**: TypeScript and Tailwind CSS for a premium, responsive, and intuitive web dashboard.
-* **Backend Intelligence**: Python-based core controller implementing offline semantic retrieval, input preprocessing, and template compilation.
-* **Local Inference**: Ollama running quantized open-weights models (e.g., `deepseek-coder` or customized local security models) for lightning-fast, zero-cost generation.
+**VulnScribe automates the VAPT reporting workflow, drastically reducing reporting overhead so security testers can focus their time and energy on active technical testing.**
 
 ---
 
-## Workflow Overview
+## 2. What VulnScribe Does
+
+VulnScribe streamlines the document creation workflow by letting the AI handle structured formatting:
 
 ```
-┌─────────────────────┐
-│ 1. Finding Inputs   │ ── Name, Observation, Severity, How Found
-└──────────┬──────────┘
-           │
-           ▼
-┌─────────────────────┐
-│ 2. Context Retrieval│ ── Checks Offline KB for Past Similar Finding Examples
-└──────────┬──────────┘
-           │
-           ▼
-┌─────────────────────┐
-│ 3. LLM Refinement   │ ── Formulates Technical Description, Impact, & Actionable Remediations
-└──────────┬──────────┘
-           │
-           ▼
-┌─────────────────────┐
-│ 4. Report Rendering │ ── Compiles into Branded, Fully Modifiable Word Doc (.docx)
-└─────────────────────┘
+Tester
+  ↓
+Finding Details
+  ↓
+Observation + Severity
+  ↓
+PoC / Evidence Folder
+  ↓
+Offline AI
+  ↓
+Structured Finding
+  ↓
+Professional Report
 ```
+
+---
+
+## 3. Key Features
+
+* **Local / Offline AI Processing**: Zero-leakage inference using quantized open-weights models running completely locally via Ollama.
+* **PoC / Evidence Handling**: Automated merging and alignment of testing outputs and screenshots directly inside findings sections.
+* **Automated Finding Documentation**: Generates fully completed descriptions, impacts, recommendations, references, and CWE/OWASP mappings.
+* **Severity-Aware Reporting**: Color-coded layouts, native graphs, and CVSS Suggestions mapped to the finding threat level.
+* **Professional Report Generation**: Produces styled Microsoft Word (`.docx`) documents with vertical centering, fixed widths, and clean alignments.
+* **Custom Report Templates**: Ingests your firm's historical reports (`REPORT.md` / Python final configs) to match existing layouts.
+* **No External AI API Required**: Runs entirely inside air-gapped target environments without leaking customer data.
+
+---
+
+## 4. How It Works
+
+### Execution Flow
+```
+ 1. Tester Creates Finding
+         │
+         ▼
+ 2. Input Observation Details
+         │
+         ▼
+ 3. Select Finding Severity
+         │
+         ▼
+ 4. Attach PoC/Evidence Folder (auto fetch PoC images)
+         │
+         ▼
+ 5. VulnScribe Processes Inputs (Hybrid TF-IDF Search)
+         │
+         ▼
+ 6. Local AI Generates Structured Content
+         │
+         ▼
+ 7. Final DOCX/PDF/HTML Report Compiled & Exported
+```
+
+> [!NOTE]
+> **The tester provides the technical truth. AI handles the documentation formatting.**
+
+### Detailed Step-by-Step Mechanism
+1. **Tester Input**: The security analyst enters minimal details into the dashboard: the finding name (e.g. "Stored XSS") and the observation details.
+2. **Context Retrieval**: The python backend tokenizes the finding title and performs a TF-IDF keyword match against `knowledge_base.json` (compiled from past report template data).
+3. **Database Check**: If a match is found with a similarity score of >= 0.35, the tool retrieves the pre-approved enterprise writing template to guarantee consistency. If score is < 0.35, it triggers local LLM generation.
+4. **AI Generation**: For low-similarity findings, the prompt is formatted with structured examples and sent to the local `deepseek-coder:1.3b` instance to output correct description, impact, and recommendations.
+5. **Output**: The output is compiled in clean markdown and presented on the live dashboard for immediate editing or copy-to-clipboard actions.
+
+---
+
+## 5. Screenshots
+
+### Web UI Dashboard
+![Web UI Dashboard](file:///home/mint/.gemini/antigravity-ide/brain/ac68cfc1-4112-45de-b37c-639732576206/media__1786224229438.png)
+*Capturing raw finding names, observations, and severity selections in a responsive interface.*
+
+### Ingested Database Viewer
+*Real-time rendering of all 27+ historical report templates that can be loaded with one click.*
+
+### AI-Generated Preview
+*Polished markdown output dividing technical impacts, recommendations, and CWE/OWASP categories.*
+
+---
+
+## 6. Before vs After
+
+### Without VulnScribe
+```
+  Observation ──> Manual Writing ──> Manual Formatting ──> Copy Evidence ──> References ──> Repeat × 30 Findings
+```
+
+### With VulnScribe
+```
+  Observation + Severity + Evidence ──> VulnScribe ──> Structured Formatted Finding ──> Final VAPT Report
+```
+
+---
+
+## 7. Privacy / Offline Architecture
+
+```
+                 VULNSCRIBE ENGINE
+             ┌─────────────────────────┐
+             │    Local Application    │
+             │                         │
+  Evidence ─>│ ──> Local AI (Ollama)   │  
+             │ ──> TF-IDF Database     │
+             │ ──> Document Compiler   │
+             └─────────────────────────┘
+                          X
+                   External AI API
+                  (Zero Data Leakage)
+```
+
+**All sensitive client assessment data, observations, IP addresses, and custom endpoints remain entirely inside the auditor's local environment.**
+
+---
+
+## 8. App Architecture
+
+### Software Layers
+```
+      TypeScript / Tailwind CSS Web Dashboard
+                         │
+                         ▼
+        FastAPI Local Python Controller
+                         │
+        ┌────────────────┴────────────────┐
+        ▼                                 ▼
+  TF-IDF Retrieval                  Local LLM via Ollama
+  (knowledge_base.json)             (deepseek-coder:1.3b)
+        │                                 │
+        └────────────────┬────────────────┘
+                         ▼
+             OOXML Word Doc Generator
+```
+
+### Deep Architectural Details
+* **Frontend Controller**: A React SPA styled using Tailwind v4.0. It coordinates browser state, queries the REST API, parses raw markdown structure on the client side, and displays real-time similarity metrics.
+* **FastAPI Backend Server**: Running locally on `127.0.0.1:8000`. Acts as the coordinator between the filesystem database cache (`knowledge_base.json`), the Ollama HTTP sockets, and the DOCX OOXML parsing engines.
+* **Semantic Retrieval Core**: Computes a Term Frequency-Inverse Document Frequency (TF-IDF) representation of all template findings. Employs cosine similarity matching to identify past reports containing similar observations.
+
+---
+
+## 9. Demo Walkthrough
+
+The demo workflow demonstrates:
+1. Entering raw observation inputs for a `Missing Rate Limiting` vulnerability.
+2. Clicking **Generate** to search the local database for historical examples.
+3. Automatically running the offline local model to compile the descriptions.
+4. Viewing the refined markdown details (Impact, Recommendation, References, CWE, OWASP, CVSS suggestions).
+5. Copying the generated output directly to clipboard.
+
+---
+
+## 10. Sample Generated Report Finding
+
+### Impact
+Absence of effective rate limiting allows an attacker to perform automated authentication attempts at scale. This significantly increases the feasibility of brute-force and credential-stuffing attacks, potentially resulting in unauthorized account access if weak or reused credentials are present.
+
+### Recommendation
+* Implement server-side rate limiting on all authentication endpoints.
+* Apply block rates based on combined IP addresses and user account thresholds.
+* Implement progressive login delays and account lockout locks.
+
+### References
+* OWASP Authentication Cheat Sheet
+* CWE-307: Improper Restriction of Excessive Authentication Attempts
+
+### CWE
+CWE-307 – Improper Restriction of Excessive Authentication Attempts
+
+### OWASP Mapping
+A07:2021 – Identification and Authentication Failures
+
+### CVSS Suggestion
+Score: 7.5 | Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+
+---
+
+## 11. Technology Stack
+
+* **Frontend**: React, TypeScript, Tailwind CSS v4.0, PostCSS.
+* **Backend**: FastAPI (Python 3), Uvicorn.
+* **Local LLM**: Ollama (`deepseek-coder:1.3b`).
+* **Retrieval/Database**: TF-IDF keyword vectorizer, `knowledge_base.json` cache.
+* **Document Compilation**: python-docx, native OOXML XML compiler.
+
+---
+
+## 12. Security Design
+
+* **100% Local Inference**: Runs entirely offline; zero data is transmitted over the network.
+* **No Cloud Telemetry**: Excludes any usage logging or external cloud communication.
+* **Data Sanitization**: Secrets and private credentials are automatically stripped prior to report compilation.
+* **Input-Output Validation**: Inputs are restricted to safe alphanumeric characters to prevent command injections.
+
+---
+
+## 13. Project Roadmap
+
+* [x] Offline AI local processing
+* [x] Contextual finding generation
+* [x] Evidence / RAG database caching
+* [x] Report formatting (fixed tables, Arial font, vertical centering)
+* [ ] Advanced document layout editor
+* [ ] Multi-format exporter (PDF, HTML)
+* [ ] Multi-language report translations
+
+---
+
+## 14. Disclaimer
+
+VulnScribe is designed for authorized security assessment, penetration testing, and VAPT compliance reporting workflows. Ensure appropriate authorization is obtained before executing audits.
