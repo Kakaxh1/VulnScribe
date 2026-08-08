@@ -1,18 +1,18 @@
 ---
-title: VulnScribe | Offline AI-Powered VAPT Reporting Engine
-meta_title: VulnScribe | Offline VAPT Reporting Engine by Bhavy Morvadiya
-meta_description: Secure, 100% offline, AI-powered VAPT report generator by Bhavy Morvadiya (kkaxh1). Automatically train on previous reports to generate editable Word documents (.docx) for Web, API, Mobile, Network, and Active Directory audits.
-keywords: Bhavy Morvadiya, Bhavya Morvadiya, kkaxh1, VulnScribe, VAPT reporting tool, offline pentest report builder, AI vulnerability reporting, automated penetration testing report generator, offline RAG security reporting, editable docx pentest reports, Active Directory assessment tool, cybersecurity report automation
-author: Bhavy Morvadiya
-canonical: https://bhavymorvadiya.netlify.app/projects/vulnscribe
-og_type: website
-og_url: https://bhavymorvadiya.netlify.app/projects/vulnscribe
-og_title: VulnScribe | Offline AI-Powered VAPT Reporting Engine by Bhavy Morvadiya
-og_description: Automatically compile professional, NDA-compliant VAPT reports locally using secure AI trained on your previous data.
-og_image: https://bhavymorvadiya.netlify.app/bhavy_3d_avatar.png
-twitter_card: summary_large_image
-twitter_site: @kkaxh1
-twitter_creator: @kkaxh1
+title: "VulnScribe | Offline AI-Powered VAPT Reporting Engine"
+meta_title: "VulnScribe | Offline VAPT Reporting Engine by Bhavy Morvadiya"
+meta_description: "Secure, 100% offline, AI-powered VAPT report generator by Bhavy Morvadiya (kkaxh1). Automatically train on previous reports to generate editable Word documents (.docx) for Web, API, Mobile, Network, and Active Directory audits."
+keywords: "Bhavy Morvadiya, Bhavya Morvadiya, kkaxh1, VulnScribe, VAPT reporting tool, offline pentest report builder, AI vulnerability reporting, automated penetration testing report generator, offline RAG security reporting, editable docx pentest reports, Active Directory assessment tool, cybersecurity report automation"
+author: "Bhavy Morvadiya"
+canonical: "https://bhavymorvadiya.netlify.app/projects/vulnscribe"
+og_type: "website"
+og_url: "https://bhavymorvadiya.netlify.app/projects/vulnscribe"
+og_title: "VulnScribe | Offline AI-Powered VAPT Reporting Engine by Bhavy Morvadiya"
+og_description: "Automatically compile professional, NDA-compliant VAPT reports locally using secure AI trained on your previous data."
+og_image: "https://bhavymorvadiya.netlify.app/bhavy_3d_avatar.png"
+twitter_card: "summary_large_image"
+twitter_site: "@kkaxh1"
+twitter_creator: "@kkaxh1"
 ---
 
 # VulnScribe — Offline AI-Powered VAPT Reporting Engine
